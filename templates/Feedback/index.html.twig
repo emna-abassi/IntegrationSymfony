@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Feedback!{% endblock %}
+
+{% block body %}
+<div class="container">
+{%for message in app.flashes('notice')%}
+<div class="alert alert-succes nt-4 nb-n">
+{{message}}
+</div>
+{%endfor%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ponctualite</th>
+     <th scope="col">reservation</th>
+
+       <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for data in list%}
+
+    <tr>
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.ponctualite}}</td>
+      <td>{{data.reservation}}</td>
+
+
+
+
+
+      <td>
+      <a class="btn btn-warning" href="{{path('updateFeedback',{'id':data.id})}}">Update Feedback</a>
+    <a class="btn btn-danger" href="{{path('DeleteFeedback',{'id':data.id})}}">Delete Feedback</a>
+
+      </td>
+    </tr>
+      {%endfor%}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+
+
+

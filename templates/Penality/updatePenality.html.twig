@@ -1,0 +1,51 @@
+{% extends "base.html.twig"%}
+{% block body %}
+<div class="container">
+<div class="row">
+<h3 class="mt-5 mb-5"> update Penality </h3>
+{%for message in app.flashes('notice')%}
+<div class="alert succes">
+{{message}}
+</div>
+{%endfor%}
+<div class="col-md-6 offset-md-3">
+{{ form_start(form) }}
+<div class="form-group">
+{{form_label(form.date)}}
+{{form_widget(form.date,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.motif)}}
+{{form_widget(form.motif,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.company)}}
+{{form_widget(form.company,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.statue)}}
+{{form_widget(form.statue,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.user_quality)}}
+{{form_widget(form.user_quality,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.reservation)}}
+{{form_widget(form.reservation,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+<button class="btn btn-info mt-2 text-white">update</button>
+</div>
+{{form_end(form)}}
+
+</div>
+</div>
+</div>
+{%endblock%}

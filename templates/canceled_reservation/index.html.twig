@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CanceledReservation!{% endblock %}
+
+{% block body %}
+<div class="container">
+{%for message in app.flashes('notice')%}
+<div class="alert alert-succes nt-4 nb-n">
+{{message}}
+</div>
+{%endfor%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">price</th>
+      <th scope="col">date</th>
+      
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for data in list%}
+
+    <tr>
+      <th scope="row">{{data.id}}</th>
+     
+      <td>{{data.price}}</td>
+      <td>{{data.date|date('d-m-Y')}}</td>
+    
+
+      <td>
+      
+      <a class="btn btn-warning" href="{{path('UpdateCancel',{'id':data.id})}}">Update CanceledReservation</a>
+            <a class="btn btn-danger" href="{{path('DeleteCancel',{'id':data.id})}}">Delete Cancel</a>
+
+      </td>
+    </tr>
+      {%endfor%}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+

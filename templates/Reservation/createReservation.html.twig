@@ -1,0 +1,190 @@
+{% extends "base.html.twig"%}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+<h3 class="mt-5 mb-5"> Create Reservation </h3>
+{%for message in app.flashes('notice')%}
+<div class="alert alert-success">
+{{message}}
+</div>
+{%endfor%}
+<div class="col-md-6 offset-md-3">
+{{ form_start(form) }}
+<div class="form-group">
+{{form_label(form.type)}}
+{{form_widget(form.type,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.date)}}
+{{form_widget(form.date,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.time)}}
+{{form_widget(form.time,{'attr':{'class':'form-control'}})}}
+</div>
+
+
+
+<div class="form-group">
+{{form_label(form.pickUpDate)}}
+{{form_widget(form.pickUpDate,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.pickUpTime)}}
+{{form_widget(form.pickUpTime,{'attr':{'class':'form-control'}})}}
+</div>
+
+
+
+<div class="form-group">
+{{form_label(form.bookReturn)}}
+{{form_widget(form.bookReturn,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.returnDate)}}
+{{form_widget(form.returnDate,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.returnTime)}}
+{{form_widget(form.returnTime,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.expireDateTime)}}
+{{form_widget(form.expireDateTime,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.origin)}}
+{{form_widget(form.origin,{'attr':{'class':'form-control'}})}}
+</div>
+
+
+<div class="form-group">
+{{form_label(form.destination)}}
+{{form_widget(form.destination,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.price)}}
+{{form_widget(form.price,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.tva)}}
+{{form_widget(form.tva,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.paymentType)}}
+{{form_widget(form.paymentType,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.nbPersons)}}
+{{form_widget(form.nbPersons,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.nbBriefCases)}}
+{{form_widget(form.nbBriefCases,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.volNumber)}}
+{{form_widget(form.volNumber,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.gamme)}}
+{{form_widget(form.gamme,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.vehicle)}}
+{{form_widget(form.vehicle,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.vehiclePic)}}
+{{form_widget(form.vehiclePic,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.nbKm)}}
+{{form_widget(form.nbKm,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.nbHours)}}
+{{form_widget(form.nbHours,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.estimatedTime)}}
+{{form_widget(form.estimatedTime,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.extraInfos)}}
+{{form_widget(form.extraInfos,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.orderPath)}}
+{{form_widget(form.orderPath,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.status)}}
+{{form_widget(form.status,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.done)}}
+{{form_widget(form.done,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.way)}}
+{{form_widget(form.way,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.ref)}}
+{{form_widget(form.ref,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.extras)}}
+{{form_widget(form.extras,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.pickup_position)}}
+{{form_widget(form.pickup_position,{'attr':{'class':'form-control'}})}}
+</div>
+
+<div class="form-group">
+{{form_label(form.pickoff_position)}}
+{{form_widget(form.pickoff_position,{'attr':{'class':'form-control'}})}}
+</div>
+
+
+<div class="form-group">
+<button class="btn btn-info mt-2 text-white">submit </button>
+</div>
+
+{{form_end(form)}}
+
+</div>
+</div>
+</div>
+{%endblock%}

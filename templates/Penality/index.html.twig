@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Penality !{% endblock %}
+
+{% block body %}
+<div class="container">
+{%for message in app.flashes('notice')%}
+<div class="alert alert-succes nt-4 nb-n">
+{{message}}
+</div>
+{%endfor%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">date</th>
+      <th scope="col">motif</th>
+      <th scope="col">company</th>
+      <th scope="col">statue</th>
+     <th scope="col">reservation</th>
+       <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for data in list%}
+
+    <tr>
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.date|date('d-m-Y')}}</td>
+      <td>{{data.motif}}</td>
+      <td>{{data.company}}</td>
+      <td>{{data.statue}}</td>
+    <td>{{data.reservation}}</td>
+
+
+
+
+      <td>
+      <a class="btn btn-warning" href="{{path('updatePenality',{'id':data.id})}}">Update Penality</a>
+    <a class="btn btn-danger" href="{{path('DeletePenality',{'id':data.id})}}">Delete Penality</a>
+
+      </td>
+    </tr>
+      {%endfor%}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
+
+
