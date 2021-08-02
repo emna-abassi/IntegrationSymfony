@@ -92,6 +92,8 @@
 
       <td>
       <a class="btn btn-warning" href="{{path('updateReservation',{'id':data.id})}}">Update reservation </a>
+     <a class="btn btn-danger" href="{{path('DeleteReservation',{'id':data.id})}}">Delete reservation</a>
+
       </td>
     </tr>
       {%endfor%}

@@ -59,4 +59,20 @@ return $this->redirectToRoute('main');
 
 
     ]);}
+    /**
+ * @Route("DeleteReservation/{id}", name="DeleteReservation")
+*/
+function DeleteReservation($id){
+    
+    $data=$this->getDoctrine()->getRepository(Reservation::class)->find($id);
+    
+        $em=$this->getDoctrine()->getManager();
+        $em->remove($data);
+        $em->flush();
+
+        $this->addFlash('notice','deleted successfully');
+
+
+    return $this->render('main');
+}
 }
