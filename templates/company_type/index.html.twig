@@ -9,7 +9,7 @@
 {{message}}
 </div>
 {%endfor%}
-<table class="table">
+<table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -20,13 +20,10 @@
       <th scope="col">code_postal</th>
       <th scope="col">zone</th>
       <th scope="col">rib</th>
-      <th scope="col">code_postal</th>
       <th scope="col">number_siren</th>
       <th scope="col">number_tva</th>
       <th scope="col">juridic_form</th>
       <th scope="col">representant_legal</th>
-      
-        <th scope="col">action</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -34,16 +31,19 @@
   {%for data in list%}
   <tr>
   <th scope="row">{{data.id}}</th>
-  <td>{{data.Name}}</td>
+<td>{{data.Name}}</td>
 <td>{{data.adress}}</td>
-<td>{{data.codePostal}}</td>
 <td>{{data.ville}}</td>
 <td>{{data.phone}}</td>
-<td>{{data.numberSiren}}</td>
-<td>{{data.juridicForm}}</td>
-<td>{{data.representantLegal}}</td>
+<td>{{data.codePostal}}</td>
 <td>{{data.zone}}</td>
 <td>{{data.rib}}</td>
+
+<td>{{data.numberSiren}}</td>
+<td>{{data.numberTVA}}</td>
+<td>{{data.juridicForm}}</td>
+<td>{{data.representantLegal}}</td>
+
 
 <td>
       <a class="btn btn-warning" href="{{path('update',{'id':data.id})}}">Update company </a>
