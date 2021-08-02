@@ -15,8 +15,9 @@ class ReservationController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('reservation/index.html.twig', [
-            'controller_name' => 'ReservationController',
+        $data=$this->getDoctrine()->getRepository(Reservation::class)->findAll();
+        return $this->render('Reservation/index.html.twig', [
+        'list'=>$data
         ]);
     }
     /**

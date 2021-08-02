@@ -1,4 +1,4 @@
-<% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Hello MainController!{% endblock %}
 
@@ -15,15 +15,17 @@
       <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">adress</th>
-      <th scope="col">code_postal</th>
       <th scope="col">ville</th>
       <th scope="col">phone</th>
+      <th scope="col">code_postal</th>
+      <th scope="col">zone</th>
+      <th scope="col">rib</th>
+      <th scope="col">code_postal</th>
       <th scope="col">number_siren</th>
       <th scope="col">number_tva</th>
       <th scope="col">juridic_form</th>
       <th scope="col">representant_legal</th>
-      <th scope="col">zone</th>
-       <th scope="col">rib</th>
+      
         <th scope="col">action</th>
       <th scope="col">Action</th>
     </tr>
@@ -34,18 +36,21 @@
   <th scope="row">{{data.id}}</th>
   <td>{{data.Name}}</td>
 <td>{{data.adress}}</td>
-<td>{{data.code_postal}}</td>
+<td>{{data.codePostal}}</td>
 <td>{{data.ville}}</td>
 <td>{{data.phone}}</td>
-<td>{{data.number_siren}}</td>
-<td>{{data.juridic_form}}</td>
-<td>{{data.representant_legal}}</td>
+<td>{{data.numberSiren}}</td>
+<td>{{data.juridicForm}}</td>
+<td>{{data.representantLegal}}</td>
 <td>{{data.zone}}</td>
 <td>{{data.rib}}</td>
+
 <td>
-     action
+      <a class="btn btn-warning" href="{{path('update',{'id':data.id})}}">Update company </a>
+      <a class="btn btn-danger" href="{{path('Delete',{'id':data.id})}}">Delete company</a>
       </td>
     </tr>
+    
       {%endfor%}
     </tr>
   </tbody>

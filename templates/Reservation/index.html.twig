@@ -1,20 +1,103 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ReservationController!{% endblock %}
+{% block title %}Hello User !{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/chevc/SecondProject/src/Controller/ReservationController.php'|file_link(0) }}">src/Controller/ReservationController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/chevc/SecondProject/templates/reservation/index.html.twig'|file_link(0) }}">templates/reservation/index.html.twig</a></code></li>
-    </ul>
+<div class="container">
+{%for message in app.flashes('notice')%}
+<div class="alert alert-succes nt-4 nb-n">
+{{message}}
 </div>
+{%endfor%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">type</th>
+      <th scope="col">date</th>
+      <th scope="col">time</th>
+      <th scope="col">pickUpDate</th>
+      <th scope="col">pickUpTime</th>
+      <th scope="col">bookReturn</th>
+      <th scope="col">returnDate</th>
+      <th scope="col">returnTime</th>
+      <th scope="col">expireDateTime</th>
+      <th scope="col">origin</th>
+      <th scope="col">destination</th>
+      <th scope="col">price</th>
+      <th scope="col">tva</th>
+      <th scope="col">paymentType</th>
+      <th scope="col">nbPersons</th>
+      <th scope="col">nbBriefCases</th>
+      <th scope="col">volNumber</th>
+      <th scope="col">gamme</th>
+      <th scope="col">vehicle</th>
+      <th scope="col">vehiclePic</th>
+      <th scope="col">nbKm</th>
+      <th scope="col">nbHours</th>
+      <th scope="col">estimatedTime</th>
+      <th scope="col">extraInfos</th>
+      <th scope="col">orderPath</th>
+      <th scope="col">status</th>
+      <th scope="col">done</th>
+      <th scope="col">way</th>
+      <th scope="col">ref</th>
+      <th scope="col">extras</th>
+      <th scope="col">pickup_position</th>
+      <th scope="col">pickoff_position</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for data in list%}
+      <tr>
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.type}}</td>
+      <td>{{data.date}}</td>
+      <td>{{data.time}}</td>
+      <td>{{data.pickUpDate}}</td>
+      <td>{{data.pickUpTime}}</td>
+      <td>{{data.bookReturn}}</td>
+      <td>{{data.returnDate}}</td>
+      <td>{{data.returnTime}}</td>
+      <td>{{data.expireDateTime}}</td>
+      <td>{{data.origin}}</td>
+      <td>{{data.destination}}</td>
+      <td>{{data.price}}</td>
+      <td>{{data.tva}}</td>
+      <td>{{data.paymentType}}</td>
+      <td>{{data.nbPersons}}</td>
+      <td>{{data.nbBriefCases}}</td>
+      <td>{{data.volNumber}}</td>
+      <td>{{data.gamme}}</td>
+      <td>{{data.vehicle}}</td>
+      <td>{{data.vehiclePic}}</td>
+      <td>{{data.nbKm}}</td>
+      <td>{{data.nbHours}}</td>
+      <td>{{data.estimatedTime}}</td>
+      <td>{{data.extraInfos}}</td>
+      <td>{{data.orderPath}}</td>
+      <td>{{data.status}}</td>
+      <td>{{data.done}}</td>
+      <td>{{data.way}}</td>
+      <td>{{data.ref}}</td>
+      <td>{{data.extras}}</td>
+      <td>{{data.pickup_position}}</td>
+      <td>{{data.pickoff_position}}</td>
+      
+
+
+
+
+
+      <td>
+      <a class="btn btn-warning" href="{{path('updateReservation',{'id':data.id})}}">Update reservation </a>
+      </td>
+    </tr>
+      {%endfor%}
+    </tr>
+  </tbody>
+</table>
 {% endblock %}
+
+
