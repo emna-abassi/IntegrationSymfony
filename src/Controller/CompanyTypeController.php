@@ -69,7 +69,7 @@ return $this->redirectToRoute('main');
 /**
  * @Route("Delete/{id}", name="Delete")
 */
-function Delete($id){
+public function Delete($id){
     
     $data=$this->getDoctrine()->getRepository(Company::class)->find($id);
     
@@ -80,7 +80,7 @@ function Delete($id){
         $this->addFlash('notice','deleted successfully');
 
 
-    return $this->render('main');
+    return $this->render('company_type/index.html.twig');
 
 }
 }
