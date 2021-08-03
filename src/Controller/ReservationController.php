@@ -52,7 +52,7 @@ public function updateReservation (Request $request , $id){
         $em->flush();
 
         $this->addFlash('notice','updated successfully');
-return $this->redirectToRoute('main');
+return $this->redirectToRoute('main6');
     }
     return $this->render('Reservation/updateReservation.html.twig',[
     'form' => $form->createView()
@@ -73,6 +73,6 @@ function DeleteReservation($id){
         $this->addFlash('notice','deleted successfully');
 
 
-    return $this->render('main');
+    return $this->render('main6');
 }
 }

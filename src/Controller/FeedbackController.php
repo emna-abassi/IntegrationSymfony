@@ -53,7 +53,7 @@ public function updateFeedback (Request $request , $id){
         $em->flush();
 
         $this->addFlash('notice','updated successfully');
-return $this->redirectToRoute('main');
+return $this->redirectToRoute('main4');
     }
     return $this->render('Feedback/updateFeed.html.twig',[
     'form' => $form->createView()

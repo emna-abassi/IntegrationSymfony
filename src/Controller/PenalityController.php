@@ -73,6 +73,6 @@ function DeletePenality($id){
         $this->addFlash('notice','deleted successfully');
 
 
-    return $this->render('main');
+    return $this->render('main2');
 }
 }

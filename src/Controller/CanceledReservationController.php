@@ -42,7 +42,7 @@ class CanceledReservationController extends AbstractController
     }
     
     /**
-     * @Route("UpdateCancel" , name="updateCancel")
+     * @Route("UpdateCancel/{id}" , name="updateCancel")
      */
 
     public function updateCancel (Request $request , $id){
@@ -55,7 +55,7 @@ class CanceledReservationController extends AbstractController
             $em->flush();
     
             $this->addFlash('notice','updated successfully');
-    return $this->redirectToRoute('main');
+    return $this->redirectToRoute('main5');
         }
         return $this->render('canceled_reservation/updateCancel.html.twig',[
         'form' => $form->createView()
@@ -77,7 +77,7 @@ class CanceledReservationController extends AbstractController
             $this->addFlash('notice','deleted successfully');
     
     
-        return $this->render('canceled_reservation');
+        return $this->render('main5');
     
     
     

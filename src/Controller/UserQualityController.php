@@ -53,7 +53,7 @@ public function updateUser (Request $request , $id){
         $em->flush();
 
         $this->addFlash('notice','updated successfully');
-return $this->redirectToRoute('main');
+return $this->redirectToRoute('main3');
     }
     return $this->render('user_quality/updateUser.html.twig',[
     'form' => $form->createView()
@@ -75,7 +75,7 @@ function DeleteUser($id){
         $this->addFlash('notice','deleted successfully');
 
 
-    return $this->render('user_quality');
+    return $this->render('main3');
 
 
 
